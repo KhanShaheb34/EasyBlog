@@ -8,12 +8,22 @@ const fs = require('fs');
  *
  * @param {Array} pages Pages array
  * @param {string} docsDir Path of docs
+ *
+ * @returns {Object} Folder paths
  */
 module.exports = (pages, docsDir) => {
   const postsDir = path.join(docsDir, 'posts');
+  let folderPaths = {};
 
   pages.map((page) => {
-    const htmlPath = path.join(postsDir, page.slug + '.html');
+    const folderPath = path.join(postsDir, page.slug);
+    const htmlPath = path.join(folderPath, 'index.html');
+
+    fs.mkdirSync(folderPath);
     fs.writeFileSync(htmlPath, page.html);
+
+    folderPaths[page.slug] = folderPath;
   });
+
+  return folderPaths;
 };
