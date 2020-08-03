@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/KhanShaheb34/EasyBlog#readme",
   "dependencies": {
+    "showdown": "^1.9.1",
     "slugify": "^1.4.5"
   }
 }

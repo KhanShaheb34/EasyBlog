@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require('path');
 const readPosts = require('./src/readPosts');
 const generatePages = require('./src/generatePages');
