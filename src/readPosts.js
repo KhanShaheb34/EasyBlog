@@ -10,11 +10,10 @@ let slugs = [];
  * Generate JSON from the posts and saves to JSON_DIR
  *
  * @param {string} postsDir Directory of the posts folder
- * @param {string} jsonPath Path where the json should be saved
  *
  * @returns {object} Array of the posts
  */
-module.exports = (postsDir, jsonPath) => {
+module.exports = (postsDir) => {
   let posts = [];
 
   const postPaths = fs
@@ -28,9 +27,6 @@ module.exports = (postsDir, jsonPath) => {
       posts.push(json);
     });
 
-  fs.writeFileSync(jsonPath, JSON.stringify(posts));
-
-  console.log(posts);
   return posts;
 };
 
@@ -74,6 +70,13 @@ const getIndexPath = (folderPath) => {
   );
 };
 
+/**
+ * Generate a valid slug from title
+ *
+ * @param {string} title Title of a post
+ *
+ * @returns {string} Slug
+ */
 const getValidSlug = (title) => {
   let basicSlug = slugify(title, { lower: true }),
     i = 1;
