@@ -23,4 +23,8 @@ const generateHTML = (page, data) => {
   return html;
 };
 
-module.exports = { generateHTML };
+const loadJSON = (path) => {
+  return JSON.parse(fs.readFileSync(path, 'utf-8'));
+};
+
+module.exports = { generateHTML, loadJSON };
