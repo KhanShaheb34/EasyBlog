@@ -13,7 +13,11 @@ const path = require('path');
  */
 const generateHTML = (page, data) => {
   const pagePath = path.join(__dirname, `./pages/${page}.html`);
+  const configPath = path.join(__dirname, `../config.json`);
+  const config = loadJSON(configPath);
   let html = fs.readFileSync(pagePath, 'utf-8');
+
+  data = { ...data, ...config };
 
   Object.keys(data).map((key) => {
     const re = new RegExp(`{{{${key}}}}`, 'g');
