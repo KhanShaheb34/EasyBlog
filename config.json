@@ -5,17 +5,17 @@
   "secondaryColor": "#333",
   "social": [
     {
-      "name": "Facebook",
+      "site": "Facebook",
       "username": "KhanShaheb34",
       "url": "https://facebook.com/KhanShaheb34"
     },
     {
-      "name": "Github",
+      "site": "Github",
       "username": "KhanShaheb34",
       "url": "https://github.com/KhanShaheb34"
     },
     {
-      "name": "LinkedIn",
+      "site": "LinkedIn",
       "username": "ShakirulHasan",
       "url": "https://www.linkedin.com/in/shakirulhasan"
     }

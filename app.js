@@ -20,4 +20,4 @@ const pages = generatePages(posts);
 cleanUpDocs(docsDir);
 const postFolderPaths = savePostHtml(pages, docsDir);
 copyPostStaticFiles(posts, postFolderPaths);
-generateIndex(posts, docsDir);
+generateIndex(posts, config, docsDir);

@@ -17,7 +17,7 @@ const generateHTML = (page, data) => {
   const config = loadJSON(configPath);
   let html = fs.readFileSync(pagePath, 'utf-8');
 
-  data = { ...data, ...config };
+  data = { ...config, ...data };
 
   Object.keys(data).map((key) => {
     const re = new RegExp(`{{{${key}}}}`, 'g');
