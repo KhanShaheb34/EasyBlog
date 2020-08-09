@@ -8,6 +8,7 @@ const savePostHtml = require('./src/savePostHtml');
 const copyPostStaticFiles = require('./src/copyPostStaticFiles');
 const { loadJSON } = require('./src/utils');
 const generateIndex = require('./src/generateIndex');
+const copyCss = require('./src/copyCss');
 
 const postDir = path.join(__dirname, './posts');
 const docsDir = path.join(__dirname, './docs');
@@ -21,3 +22,4 @@ cleanUpDocs(docsDir);
 const postFolderPaths = savePostHtml(pages, docsDir);
 copyPostStaticFiles(posts, postFolderPaths);
 generateIndex(posts, config, docsDir);
+copyCss(config.theme, docsDir);
